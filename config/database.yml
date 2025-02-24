@@ -96,3 +96,6 @@ production:
     <<: *primary_production
     database: movie_app_production_cable
     migrations_paths: db/cable_migrate
+  <<: *default
+  url: <%= ENV['postgresql://rails_postgresql_movieapp_user:sPo7ItLS1VwcUIcrgRoAnRKxwXtN4S2y@dpg-cuu17cggph6c73b7fug0-a/rails_postgresql_movieapp
+'] %> # ENTER THIS *EXACTLY* AS THIS, THIS READS THE VALUE OF THE DATABASE_URL environment variable programatically
