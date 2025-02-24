@@ -1,0 +1,21 @@
+<h1>Popular Movies</h1>
+<table border="1">
+  <tr>
+    <th>Poster</th>
+    <th>Title</th>
+  </tr>
+  <% @movies.each do |movie| %>
+    <tr>
+      <td>
+        <% if movie['poster_path'].present? %>
+          <img src="https://image.tmdb.org/t/p/w200<%= movie['poster_path'] %>" alt="Movie Poster"/>
+        <% else %>
+          No Image Available
+        <% end %>
+      </td>
+      <td>
+        <%= link_to movie['title'], movie_path(movie['id']) %>
+      </td>
+    </tr>
+  <% end %>
+</table>
